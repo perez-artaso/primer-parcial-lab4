@@ -1,0 +1,114 @@
+<!--<div class="container">
+    <form [formGroup]="productForm" (ngSubmit)="submitProductForm()">
+        <div class="form-group">
+            <div class="form-group">
+                <label for="product-code">Código de Producto</label>
+                <input formControlName="code" type="text" class="form-control" id="product-code">
+            </div>
+            <div class="form-group">
+                <label for="product-description">Descripción</label>
+                <input formControlName="description" type="text" class="form-control" id="product-description">
+            </div>
+            <div class="form-group">
+                <label for="product-price">Precio</label>
+                <input formControlName="price" type="number" class="form-control" id="product-price">
+            </div>
+            <div class="form-group">
+                <label for="product-stock">Stock</label>
+                <input formControlName="stock" type="number" class="form-control" id="product-stock">
+            </div>
+            <div class="form-group">
+                <label for="product-origin">País de Origen</label>
+                <input formControlName="origin" type="text" class="form-control" id="product-origin">
+            </div>            
+            <div class="form-check my-4">
+                <input formControlName="eatable" class="form-check-input" type="checkbox" value="true" id="product-eatable">
+                <label class="form-check-label" for="product-eatable">
+                  Comestible
+                </label>
+            </div>
+        </div>
+    </form>
+
+    <div class="card">
+        <app-country-selector (onCountryEmit)="asignCountry($event)"></app-country-selector>
+    </div>
+</div>-->
+
+
+<div class="container">
+    <div class="py-5 text-center">
+      <h2 *ngIf="!successSubmition; else confirmationBlock">Alta Producto</h2>
+      <ng-template #confirmationBlock>
+        <h2 class="alert-success">Producto Cargado con éxito</h2>
+      </ng-template>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">País de Origen</span>
+          <span class="badge badge-secondary badge-pill">3</span>
+        </h4>
+
+        <app-country-selector (onCountryEmit)="asignCountry($event)"></app-country-selector>
+  
+      </div>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Datos del Producto</h4>
+        <form [formGroup]="productForm" (ngSubmit)="submitProductForm()" class="needs-validation">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Código</label>
+              <input formControlName="code" type="text" class="form-control" id="product-code">
+              <div *ngIf="isInputValid('code')" class="alert-danger">
+                Código requerido
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="product-description">Descripción</label>
+              <input formControlName="description" type="text" class="form-control" id="product-description">
+              <div *ngIf="isInputValid('description')" class="alert-danger">
+                Descripción requerida
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="product-price">Precio</label>
+              <input formControlName="price" type="number" class="form-control" id="product-price">
+              <div *ngIf="isInputValid('price')" class="alert-danger">
+                Precio requerido, debe ser mayor a cero
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="product-stock">Stock</label>
+              <input formControlName="stock" type="number" class="form-control" id="product-stock">
+              <div *ngIf="isInputValid('stock')" class="alert-danger">
+                Stock requerido, debe ser mayor a cero
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="product-origin">Origen</label>
+              <input formControlName="origin" type="text" class="form-control" id="product-origin">
+              <div *ngIf="isInputValid('origin')" class="alert-danger">
+                Origen requerido
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="form-check">
+                    <input formControlName="eatable" class="form-check-input" type="checkbox" value="true" id="product-eatable">
+                    <label class="form-check-label" for="product-eatable">
+                      Comestible
+                    </label>
+                </div>
+          </div>
+
+          <button class="my-5 btn btn-primary btn-lg btn-block" type="submit">Agregar Producto</button>
+        
+</div>
+</form>

@@ -10,10 +10,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BienvenidaComponent } from './components/bienvenida/bienvenida.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { AltaProductoComponent } from './components/alta-producto/alta-producto.component';
+import { CountrySelectorComponent } from './components/country-selector/country-selector.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BienvenidaComponent,
+    NavbarComponent,
+    LoginFormComponent,
+    AltaProductoComponent,
+    CountrySelectorComponent
   ],
   imports: [
     BrowserModule,
