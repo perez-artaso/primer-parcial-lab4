@@ -2,6 +2,7 @@
     <h5 class="my-0 mr-md-auto font-weight-normal">Primer Parcial</h5>
     <nav *ngIf="userLogged" class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" [routerLink]="['/producto/alta']">Alta Producto</a>
+        <a class="p-2 text-dark" [routerLink]="['/producto/lista']">Lista Producto</a>
     </nav>
     <a *ngIf="!userLogged; else logout" class="btn btn-outline-primary" [routerLink]="['/login-form']">Login</a>
     <ng-template #logout>
