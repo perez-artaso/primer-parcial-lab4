@@ -15,6 +15,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { AltaProductoComponent } from './components/alta-producto/alta-producto.component';
 import { CountrySelectorComponent } from './components/country-selector/country-selector.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { CountryDetailComponent } from './components/country-detail/country-detail.component';
+import { ProductsComponent } from './components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { CountrySelectorComponent } from './components/country-selector/country-
     NavbarComponent,
     LoginFormComponent,
     AltaProductoComponent,
-    CountrySelectorComponent
+    CountrySelectorComponent,
+    ProductListComponent,
+    ProductDetailComponent,
+    CountryDetailComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

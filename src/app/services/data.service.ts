@@ -16,4 +16,8 @@ export class DataService {
     return this.http.get("https://restcountries.com/v3.1/region/americas");
   }
 
+  getCountryByName(countryName: string){
+    return this.http.get("https://restcountries.com/v3.1/name/"+countryName);
+  }
+
 }

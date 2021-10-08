@@ -1,0 +1,8 @@
+ul {
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+li {
+    margin-top:0.2em;
+}

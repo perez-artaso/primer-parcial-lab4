@@ -16,7 +16,6 @@ export class CountrySelectorComponent implements OnInit {
   ngOnInit(): void {
     this.data.getCountries().subscribe(
       (countriesObj) => {
-        console.dir(countriesObj)
         this.countries = countriesObj as any;
       }
     )
